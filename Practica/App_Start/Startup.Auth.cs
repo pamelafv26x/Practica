@@ -54,9 +54,9 @@ namespace Practica
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "969057263455821",
+               appSecret: "60f21cfda1c44e8828daac55e36ef4eb");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
