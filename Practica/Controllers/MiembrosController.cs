@@ -34,6 +34,7 @@ namespace Practica.Controllers
                      estado_asig = model.estado_asig
                 };
                 db.Miembros.Add(members);
+                db.SaveChanges();
 
                 return RedirectToAction("GetMembers");
             }

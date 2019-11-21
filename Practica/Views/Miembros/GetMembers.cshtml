@@ -1,31 +1,37 @@
 ﻿@model IEnumerable<Practica.Models.Miembro>
 
-    ViewBag.Title = "GetMembers";
+@{
+    ViewBag.Title = "Listado de Miembros";
+}
 
-  <div class="container">
+<div class="container">
 
-        <h2 class="text-center">Listado de Miembros</h2>
+    <h2 class="text-center">Listado de Miembros</h2>
 
-        <div style="padding-bottom:2.5%; padding-top:1.5%;">
-            @Html.DropDownList("Miembros", (IEnumerable<SelectListItem>)ViewBag.Members, new { @class = "form-control", @id = "members" })
-        </div>
-
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Miembro</th>
-                    <th>Asignatura</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelitem => item.nombre_miembro)</td>
-                        <td>@Html.DisplayFor(modelitem => item.Asignatura.nombre_asig)</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
+    <div style="padding-bottom:2.5%; padding-top:1.5%;">
+        @Html.DropDownList("Miembros", (IEnumerable<SelectListItem>)ViewBag.Members, new { @class = "form-control", @id = "members" })
     </div>
+
+    <table class="table table-bordered table-striped">
+        <thead class="bg-primary">
+            <tr>
+                <th width="15%">Miembro</th>
+                <th>Asignatura</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelitem => item.nombre_miembro)</td>
+                    <td>@Html.DisplayFor(modelitem => item.Asignatura.nombre_asig)</td>
+                    <td>@Html.DisplayFor(modelitem => item.Estado.nombre_estado)</td>
+                    <td width="5%;" class="text-center"><a class="glyphicon glyphicon-plus" href="@Url.Action("AddMembers","Miembros")"></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
