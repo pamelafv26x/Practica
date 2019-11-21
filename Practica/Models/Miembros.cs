@@ -12,12 +12,14 @@ namespace Practica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Contactos
+    public partial class Miembros
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Celular { get; set; }
-        public string Email { get; set; }
-        public string Direccion { get; set; }
+        public int ID { get; set; }
+        public string nombre_miembro { get; set; }
+        public int id_asig { get; set; }
+        public int estado_asig { get; set; }
+    
+        public virtual Asignaturas Asignaturas { get; set; }
+        public virtual Estados Estados { get; set; }
     }
 }

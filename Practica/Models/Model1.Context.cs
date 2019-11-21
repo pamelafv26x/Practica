@@ -13,10 +13,10 @@ namespace Practica.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AgendaEntities : DbContext
+    public partial class Practica5Entities : DbContext
     {
-        public AgendaEntities()
-            : base("name=AgendaEntities")
+        public Practica5Entities()
+            : base("name=Practica5Entities")
         {
         }
     
@@ -25,7 +25,10 @@ namespace Practica.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Agenda> Agenda { get; set; }
+        public virtual DbSet<Asignaturas> Asignaturas { get; set; }
         public virtual DbSet<Contactos> Contactos { get; set; }
-        public virtual DbSet<Evento> Evento { get; set; }
+        public virtual DbSet<Estados> Estados { get; set; }
+        public virtual DbSet<Miembros> Miembros { get; set; }
     }
 }

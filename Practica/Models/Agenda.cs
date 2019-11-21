@@ -12,11 +12,11 @@ namespace Practica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Evento
+    public partial class Agenda
     {
         public int Id { get; set; }
-        public string Evento1 { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public System.TimeSpan Hora { get; set; }
+        public string Evento { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<System.TimeSpan> Hora { get; set; }
     }
 }

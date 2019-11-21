@@ -12,12 +12,18 @@ namespace Practica.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Contactos
+    public partial class Estados
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Celular { get; set; }
-        public string Email { get; set; }
-        public string Direccion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Estados()
+        {
+            this.Miembros = new HashSet<Miembros>();
+        }
+    
+        public int ID { get; set; }
+        public string nombre_estado { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Miembros> Miembros { get; set; }
     }
 }
