@@ -1,0 +1,37 @@
+﻿@model  Practica.Models.Miembro
+
+@{
+    ViewBag.Title = "AddMembers";
+}
+
+<h2>Crear Miembros</h2>
+
+
+@using (Html.BeginForm("AddMembers","Miembros",FormMethod.Post))
+{
+    <div class="container">
+        <div class="col-md-6 col-xs-12">
+            <div class="row">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre_mi" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Asignaturas</label>
+                    @Html.DropDownList("Asignaturas", (IEnumerable<SelectListItem>)ViewBag.Asignaturas,"Asignatuas...", new { @class = "form-control", @id = "asignaturas" })
+                </div>
+                <div class="form-group">
+                    <label>Asignaturas</label>
+                    @Html.DropDownList("Estado", (IEnumerable<SelectListItem>)ViewBag.Estado,"Estados...", new { @class = "form-control", @id = "estado" })
+                </div>
+
+                <div class="form-group">
+                    <input  type="submit" id="create" value="Crear Miembro" class="btn btn-success"/>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+}
